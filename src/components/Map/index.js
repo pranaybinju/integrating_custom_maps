@@ -35,17 +35,8 @@ export default class Map extends React.Component {
         maximumAge: 0,
       },
     );
-    setInterval(() => {
-      this.setState({
-        latitude: this.state.latitude + 0.00001,
-        longitude: this.state.longitude,
-        coordinates: this.state.coordinates.concat({
-          latitude: this.state.latitude + 0.00001,
-          longitude: this.state.longitude,
-        }),
-      });
-    }, 1000);
-    /*  Geolocation.watchPosition(
+
+    Geolocation.watchPosition(
       position => {
         this.setState({
           latitude: position.coords.latitude,
@@ -66,7 +57,7 @@ export default class Map extends React.Component {
         maximumAge: 0,
         distanceFilter: 0,
       },
-    ) */
+    );
   }
   render() {
     return (
